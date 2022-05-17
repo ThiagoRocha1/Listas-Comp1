@@ -200,13 +200,83 @@ def questao5b(x,y):
 
     return contagem
 
+#Questao 5 
+
+def questao5a (x):
+
+    # Retorna o quociente e resto da divisao por 10 
+
+    q = x//10 
+
+    r = x%10
+
+    
+
+    return q, r
+
+    
+
+def questao5b (x,y):
+
+    contagem = 0 
+    quociente,resto = questao5a(x)
+    while quociente > 0 or resto !=0 :
+        if resto ==  y:
+            contagem += 1
+            resto = quociente%10
+            quociente = quociente//10 
+        elif resto != y:
+            contagem =contagem
+            resto = quociente%10
+            quociente = quociente//10 
+
+
+    
+
+    return contagem
+
+#Questao 5 
+
+def questao5a (x):
+
+    # Retorna o quociente e resto da divisao por 10 
+
+    q = x//10 
+
+    r = x%10
+
+    
+
+    return q, r
+
+    
+
+def questao5b (x,y):
+
+    contagem = 0 
+    quociente,resto = questao5a(x)
+    while quociente > 0 or resto !=0 :
+        if resto ==  y:
+            contagem += 1
+            resto = quociente%10
+            quociente = quociente//10 
+        elif resto != y:
+            contagem =contagem
+            resto = quociente%10
+            quociente = quociente//10 
+
+
+    
+
+    return contagem
+
 #5A
 
-print(questao5a(3296))
+#print(questao5a(3296))
 
-print(questao5a(8765421))
+#print(questao5a(8765421))
 
-print(questao5a(10101))
+#print(questao5a(10101))
 
 #5B
 
