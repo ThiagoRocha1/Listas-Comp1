@@ -114,13 +114,13 @@ def questao3 (pi,a,f,maxTentativas):
 
         return tentativas,False
 
-print((questao3(10,5,1,50)))
+#print((questao3(10,5,1,50)))
 
-print((questao3(10,5,2,50)))
+#print((questao3(10,5,2,50)))
 
-print((questao3(0,2,0.5,5)))
+#print((questao3(0,2,0.5,5)))
 
-print((questao3(-2,3,0.1,40))) 
+#print((questao3(-2,3,0.1,40))) 
 
 #Questao4 
 
@@ -152,88 +152,15 @@ def questao4(x):
 
         return False 
 
-print(questao4(28))
+#print(questao4(28))
 
-print(questao4(496))
+#print(questao4(496))
 
-print(questao4(8))
+#print(questao4(8))
 
-print(questao4(11))
-
-#Questao 5 
-
-def questao5a (x):
-
-    # Retorna o quociente e resto da divisao por 10 
-
-    q = x//10 
-
-    r = x%10
-
-    
-
-    return q, r
-
-    
-
-def questao5b(x,y):
-
-    contagem = 0
-
-    q,r = questao5a(x)
-
-    while q > 0:
-
-        if r == y:
-
-            contagem += 1
-
-            q = q/10
-
-        elif q != y:
-
-            contagem = contagem
-
-            q= q/10
-
-    
-
-    return contagem
-
-#Questao 5 
-
-def questao5a (x):
-
-    # Retorna o quociente e resto da divisao por 10 
-
-    q = x//10 
-
-    r = x%10
-
-    
-
-    return q, r
-
-    
-
-def questao5b (x,y):
-
-    contagem = 0 
-    quociente,resto = questao5a(x)
-    while quociente > 0 or resto !=0 :
-        if resto ==  y:
-            contagem += 1
-            resto = quociente%10
-            quociente = quociente//10 
-        elif resto != y:
-            contagem =contagem
-            resto = quociente%10
-            quociente = quociente//10 
+#print(questao4(11))
 
 
-    
-
-    return contagem
 
 #Questao 5 
 
@@ -280,12 +207,12 @@ def questao5b (x,y):
 
 #5B
 
-print(questao5b(934172665,6))
+#print(questao5b(934172665,6))
 
-print(questao5b(4544660,3))
+#print(questao5b(4544660,3))
 
-print(questao5b(111223,1))
+#print(questao5b(111223,1))
 
-print(questao5b(17970747,7))
+#print(questao5b(17970747,7))
 
-print(questao5b(765,5))
+#print(questao5b(765,5))
