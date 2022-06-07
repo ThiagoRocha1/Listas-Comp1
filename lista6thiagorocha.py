@@ -101,6 +101,7 @@ print(questao3(' a '))
 #Questao 4 
 
 def fatiar_lista (lista):
+    
     pi = 0
     lista_fatiamento = []
     
@@ -120,44 +121,125 @@ def fatiar_lista (lista):
     
     return(lista_fatiamento)
 
+
+
+
 def questao4(string1,string2):
 # 2 str -> int
 # Analisar o tamanho da string 2 para saber o fatiamento da string 1 
 # Analisar se os caracteres em sequencias sao iguais. 
 
-    recorrencia = 0 
-    lista_fatiamento = []
-   
-   
-   
-    pi = 0
-    for letra in range(0,len(string1)):
-     
-        posicao_branco = 0    
-        
-        if string1[letra] == ' ':
-            
-            lista_fatiamento += [string1[pi:letra]]
-            posicao_branco = letra
-            pi = letra
-        
-        
-        if letra == len(string1)-1 :
-            lista_fatiamento += [string1[pi:letra+1]]
-        
+    recorrencia = 0
+    repeticao = 0  
+    lista_fatiamento = fatiar_lista(string1)
+              
     for palavra in lista_fatiamento:
-        divisao = palavra/len(string2)
-        palavra_fatiada = []
-        pi2=0
-        for letras2 in range (1,divisao+1):
-            palavra_fatiada+= palavra[pi2:len(string2)]
-            pi = 
+
+
+        for letra in range(0,len(palavra)):
+
+            if letra == len(palavra)-1:
+                break   
+
+            pi = letra 
+
+            if palavra[pi : (pi+len(string2))] == string2:
+
+                recorrencia += 1
+
+            if palavra[pi : (pi+len(string2))] == palavra [(pi-(len(string2)-1)):pi+1]:
+                
+                repeticao += 1 
+
             
+            
+    return recorrencia - repeticao
+
 
     
-    return lista_fatiamento
+#print(questao4('tres tigres tristes','t'))
+#print(questao4('paralelepipedo','t'))
+#print(questao4('Esssess ssão algunss tesstes', 'ss'))
+#print(questao4('arara', 'ara'))
+#print(questao4('arara', 'ar'))
+#print(questao4('aaaaaaa','aa'))
 
 
+#Questao 5
+
+def questao5 ():
+
+    lista_produtos = []
+
+
+    for i in range(5):
+
+        produto = str(input('Digite o nome do produto: '))
+        quantidade = int(input('Digite a quantidade do produto: '))
+        preco = float(input('Digite o preco do produto: '))
+
+        l = [produto,quantidade,preco]
+
+        lista_produtos += [l]
     
-print(questao4('tres tigres tristes','t'))
-print(questao4('paralelepipedo','t'))
+        
+
+    menor_quantidade = []
+
+    mais_caro = 0
+
+    # Analisar a lista de produtos
+
+    for produtos in lista_produtos:
+
+        # Analisar quantos produtos possuem menos de 50 unidades
+
+            qnt_produto = produtos[1]
+
+            if qnt_produto < 50:
+                
+                menor_quantidade += [produtos[0]]
+
+        #Analisar o produto mais caro
+
+            preco_produto = produtos[2]
+
+            if preco_produto > mais_caro:
+
+                mais_caro = produtos[2]
+                produto_mais_caro = produtos
+
+    # Printar os argumentos na tela 
+
+    qnt_menor_quantidade = len(menor_quantidade)
+ 
+
+    print (f'Ha {qnt_menor_quantidade} produtos com menos de 50 unidades:' , end=' ')
+
+    for e in menor_quantidade:
+
+        print(e,end='; ')
+    
+    print(' ')
+
+    nome_mais_caro = produto_mais_caro[0]
+    preco_mais_caro = produto_mais_caro[2]
+
+    print(f'O produto mais caro eh o {nome_mais_caro}, e ele custa {preco_mais_caro:.4} reais',end ='\n')
+
+    print(' ')
+
+    #Transformar a lista de produtos em uma tupla de tuplas
+    
+    x=0
+
+    for listas in lista_produtos:
+
+        listas = tuple(listas)
+        lista_produtos[x] = listas
+        x += 1 
+
+    return tuple(lista_produtos)
+
+
+print(questao5())
