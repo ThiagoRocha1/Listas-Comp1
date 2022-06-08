@@ -98,6 +98,29 @@ print(questao3('  '))
 print(questao3(' a '))
 '''
 
+#Questao 4 
+
+def fatiar_lista (lista):
+    
+    pi = 0
+    lista_fatiamento = []
+    
+    for letra in range(0,len(lista)):
+     
+        posicao_branco = 0    
+        
+        if lista[letra] == ' ':
+            
+            lista_fatiamento += [lista[pi:letra]]
+            posicao_branco = letra
+            pi = letra
+        
+        
+        if letra == len(lista)-1 :
+            lista_fatiamento += [lista[pi:letra+1]]
+    
+    return(lista_fatiamento)
+
 def questao4(string1,string2):
 # 2 str -> int
 # Analisar o tamanho da string 2 para saber o fatiamento da string 1 
