@@ -10,7 +10,7 @@ def questao1 (lista):
         if maximo < lista[x]:
             maximo = lista[x]
         x += 1 
-    
+
     return maximo 
 
 #print(questao1([-7,-2,-5]))
@@ -51,7 +51,7 @@ def questao3 (lista1,lista2):
         i = lista1[x]**lista2[x]
         l_resultado += [i]
         x+= 1
-    
+
     return l_resultado
 
 #print(questao3([4,5,6],[2,2,2]))
@@ -101,14 +101,14 @@ def questao5 (lista):
     while x< len(lista):
         if lista[x]%2 == 0:
             pares += [lista[x]]
-        
+
         else:
             impares += [lista[x]]
-            
+
         x+= 1 
-    
+
     return pares + impares
-    
+
 #print(questao5([1,2,3,4,5,6,7,8]))
 #print(questao5([0,10,9,1]))
 #print(questao5([5,3,7,1,10,8,12]))
@@ -118,72 +118,29 @@ def questao5 (lista):
 #Questao6 
 
 def questao6(lista):
-    
+
 # Essa funcao recebe como argumento uma lista de numeros inteiros positivos e retorna quantos divisores os numeros da lista possuem
 # list -> list
 
     x=0 
     l_divisores = []
-    
+
     while x < len(lista):
-        
+
         y = 1 
         cont = 0 
         while y <= lista[x]:
             if lista[x]%y == 0:
                 cont += 1
             y += 1 
-        
+
         l_divisores += [cont]
-        
+
         x+=1 
-    
+
     return l_divisores
- 
+
 
 #print(questao6([2,3,4,5,6,7]))
 #print(questao6([6,21,10,49,121]))
 #print(questao6([1,10,100]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
