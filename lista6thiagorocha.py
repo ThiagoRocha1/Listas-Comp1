@@ -1,4 +1,4 @@
-Questao 1 
+#Questao 1 
 
 def questao1 (tupla):
 # 1 tuple -> 2 tuple
@@ -98,62 +98,48 @@ print(questao3('  '))
 print(questao3(' a '))
 '''
 
-#Questao 4 
-
-def fatiar_lista (lista):
-    
-    pi = 0
-    lista_fatiamento = []
-    
-    for letra in range(0,len(lista)):
-     
-        posicao_branco = 0    
-        
-        if lista[letra] == ' ':
-            
-            lista_fatiamento += [lista[pi:letra]]
-            posicao_branco = letra
-            pi = letra
-        
-        
-        if letra == len(lista)-1 :
-            lista_fatiamento += [lista[pi:letra+1]]
-    
-    return(lista_fatiamento)
-
-
-
-
 def questao4(string1,string2):
 # 2 str -> int
 # Analisar o tamanho da string 2 para saber o fatiamento da string 1 
 # Analisar se os caracteres em sequencias sao iguais. 
 
     recorrencia = 0
-    repeticao = 0  
+      
     lista_fatiamento = fatiar_lista(string1)
               
     for palavra in lista_fatiamento:
 
+        x = 0
+        pi = x 
 
-        for letra in range(0,len(palavra)):
+        while x < len(palavra):
+            
+            if x == len(palavra)-1:
+                break
 
-            if letra == len(palavra)-1:
-                break   
+            if palavra[pi:x+(len(string2))].lower() == string2.lower():
+                recorrencia +=1
 
-            pi = letra 
+                x+=2
+                pi = x
+                continue
 
-            if palavra[pi : (pi+len(string2))] == string2:
+            x += 1
+            pi = x  
 
-                recorrencia += 1
-
-            if palavra[pi : (pi+len(string2))] == palavra [(pi-(len(string2)-1)):pi+1]:
-                
-                repeticao += 1 
 
             
             
-    return recorrencia - repeticao
+    return recorrencia
+
+
+    
+#print(questao4('tres tigres tristes','t'))
+#print(questao4('paralelepipedo','t'))
+#print(questao4('Esssess ssão algunss tesstes', 'ss'))
+#print(questao4('arara', 'ara'))
+#print(questao4('arara', 'ar'))
+#print(questao4('aaaaaaa','aa'))
 
 
     
