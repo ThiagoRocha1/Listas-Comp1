@@ -216,3 +216,4 @@ def questao5b (x,y):
 #print(questao5b(17970747,7))
 
 #print(questao5b(765,5))
+
