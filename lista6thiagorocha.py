@@ -143,7 +143,7 @@ def questao4(string1,string2):
             if palavra[pi:x+(len(string2))].lower() == string2.lower():
                 recorrencia +=1
 
-                x+=2
+                x+= len(string2)
                 pi = x
                 continue
 
